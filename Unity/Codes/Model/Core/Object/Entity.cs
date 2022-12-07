@@ -23,11 +23,13 @@ namespace ET
         public long InstanceId
         {
             get;
+            
             protected set;
         }
 
         protected Entity()
         {
+            
         }
 
         [IgnoreDataMember]
