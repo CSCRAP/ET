@@ -1,23 +1,12 @@
-﻿namespace ET.Common
+﻿using System;
+
+namespace ET.Common
 {
+    [Serializable]
     public abstract class Node
     {
-        public  int Id
-        {
-            get
-            {
-                return this.Id;
-            }
-            private set
-            {
-                this.Id = this.Id;
-            }
-        }
+        public int Id { get; private set; }
 
-        public Node() 
-        {
-        }
-        
         public Node(int Id) 
         {
             this.Id = Id;

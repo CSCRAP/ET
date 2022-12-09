@@ -1,5 +1,8 @@
-﻿namespace ET.Common
+﻿using System;
+
+namespace ET.Common
 {
+    [Serializable]
     public class EventDispatchNode : CompositeNode
     {
         
