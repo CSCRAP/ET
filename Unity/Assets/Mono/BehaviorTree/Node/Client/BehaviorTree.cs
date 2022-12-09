@@ -7,9 +7,20 @@ namespace ET.Client
     {
         public long Id;
         
+        public long NodeNum;
+
+        public long MaxFloor;
+
         
         [SerializeReference]
         public Node Head;
+
+        
+        public BehaviorTree()
+        {
+            this.Head = new RootNode(1);
+            this.NodeNum = 1;
+        }
 
     }
 }

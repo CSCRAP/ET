@@ -80,17 +80,17 @@ namespace ET
                 
             }
 
-            if (typeof(T).IsValueType)
+            if (!typeof(T).IsValueType)
             {
-                Value<T> value = ValueObjectPool.Instance.Fetch<T>();
-                value  = obj as Value<T>;
-                
-                return value.t;
+                return (T)obj;
 
             }
             
-            return (T)obj;
-
+           
+            Value<T> value = ValueObjectPool.Instance.Fetch<T>();
+            value  = obj as Value<T>;
+                
+            return value.t;
 
         }
 
