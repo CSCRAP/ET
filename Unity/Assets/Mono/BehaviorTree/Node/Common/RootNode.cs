@@ -4,7 +4,7 @@
     {
 
 
-        public RootNode(long Id) : base(Id)
+        public RootNode(int Id) : base(Id)
         {
            
         }

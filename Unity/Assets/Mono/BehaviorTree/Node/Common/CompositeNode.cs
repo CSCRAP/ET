@@ -5,7 +5,7 @@ namespace ET.Common
     public class CompositeNode : Node
     {
         
-        public CompositeNode(long Id) : base(Id)
+        public CompositeNode(int Id) : base(Id)
         {
           
         }

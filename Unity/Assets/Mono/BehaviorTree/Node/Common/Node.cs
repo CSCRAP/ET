@@ -2,13 +2,23 @@
 {
     public abstract class Node
     {
-        private readonly long Id;
+        public  int Id
+        {
+            get
+            {
+                return this.Id;
+            }
+            private set
+            {
+                this.Id = this.Id;
+            }
+        }
 
         public Node() 
         {
         }
         
-        public Node(long Id) 
+        public Node(int Id) 
         {
             this.Id = Id;
         }

@@ -4,7 +4,7 @@
     {
         
         
-        public EventDispatchNode(long Id) : base(Id)
+        public EventDispatchNode(int Id) : base(Id)
         {
           
         }
