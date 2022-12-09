@@ -1,6 +1,9 @@
-﻿namespace ET.Common
+﻿using System;
+
+namespace ET.Common
 {
-    public class RootNode : CompositeNode
+    [Serializable]
+    public abstract class RootNode : CompositeNode
     {
 
 

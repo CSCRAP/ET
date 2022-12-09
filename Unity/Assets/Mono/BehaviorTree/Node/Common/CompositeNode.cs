@@ -1,18 +1,20 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 
 namespace ET.Common
 {
-    public class CompositeNode : Node
+    [Serializable]
+    public abstract class CompositeNode : Node
     {
         
-        public CompositeNode(int Id) : base(Id)
+        protected CompositeNode(int Id) : base(Id)
         {
           
         }
-        
-       
-        
-        public List<Node> Childs = new List<Node>();
-        
+
+
+
+        public readonly List<Node> Childs  = new List<Node>();
+
     }
 }
