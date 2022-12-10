@@ -15,38 +15,11 @@ namespace ET
             this.Ct = ct;
         }
 
-        public Entity Entity {
-            get
-            {
-                return this.Entity;
-            }
-            private set
-            {
-                this.Entity = this.Entity;
-            }
-        }
+        public Entity Entity { get; private set; }
 
-        public BTEventType EventType {
-            get
-            {
-                return this.EventType;
-            }
-            private set
-            {
-                this.EventType = this.EventType;
-            }
-        }
+        public BTEventType EventType { get; private set; }
 
-        public ETCancellationToken Ct {   
-            get
-            {
-                return this.Ct;
-            }
-            private set
-            {
-                this.Ct = this.Ct;
-            } 
-        }
+        public ETCancellationToken Ct { get; private set; }
         
         
 

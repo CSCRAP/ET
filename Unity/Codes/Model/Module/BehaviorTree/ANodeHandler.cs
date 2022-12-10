@@ -1,5 +1,5 @@
 ﻿using System;
-using UnityEditor.Experimental.GraphView;
+
 
 namespace ET.Common
 {
@@ -22,6 +22,10 @@ namespace ET.Common
 
         }
         
+        public Type GetNodeType()
+        {
+            return typeof (T);
+        }
 
         public abstract ETTask Handle(Blackboard bd, T t);
         

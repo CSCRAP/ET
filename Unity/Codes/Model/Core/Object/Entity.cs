@@ -732,7 +732,7 @@ namespace ET
             Entity component;
             if (isFromPool)
             {
-                component = ObjectPool.Instance.Fetch(type);
+                component = ObjectPool.Instance.Fetch<Entity>();
             }
             else
             {
