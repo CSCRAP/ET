@@ -1,4 +1,4 @@
-﻿namespace ET.Codes.Model.Module.BehaviorTree
+﻿namespace ET
 {
     public class Value<T> 
     {

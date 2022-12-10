@@ -30,15 +30,22 @@ namespace ET
             return queue.Dequeue() as Value<T>;
         }
         
-        public void Recycle<T>(Value<T> obj)
+        public void Recycle(object obj)
         {
-            Type type = typeof (T);
+            Type type = obj.GetType();
             Queue<object> queue = null;
             if (!pool.TryGetValue(type, out queue))
             {
                 queue = new Queue<object>();
                 pool.Add(type, queue);
             }
+            
+            // 一种对象最大为100个
+            if (queue.Count > 100)
+            {
+                return;
+            }
+            
             queue.Enqueue(obj);
         }
         

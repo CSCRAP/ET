@@ -35,13 +35,11 @@ namespace ET
             }
 
             
-            var obj = new Value<T>();
-                
+            Value<T> obj = ValueObjectPool.Instance.Fetch<T>();
+            
             obj.t = value;
            
-            Outputs.Add(key, value);
-            ValueObjectPool.Instance.Recycle(obj);
-
+            Outputs.Add(key, obj);
         }
 
         public T Get<T>(string key) 
@@ -59,9 +57,7 @@ namespace ET
 
             }
             
-           
-            Value<T> value = ValueObjectPool.Instance.Fetch<T>();
-            value  = obj as Value<T>;
+            Value<T> value  = obj as Value<T>;
                 
             return value.t;
 
@@ -69,8 +65,19 @@ namespace ET
 
         public void Dispose()
         {
+            foreach (object obj in this.Outputs.Values)
+            {
+               
+                if (obj.GetType().IsGenericType)
+                {
+                    
+                    ValueObjectPool.Instance.Recycle(obj);
+                }
+
+            }
+            
             this.Outputs.Clear();
-            ValueObjectPool.Instance.Dispose();
+            
         }
     }
 }
